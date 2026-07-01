@@ -1,0 +1,16 @@
+{
+  "name": "spectrum-visualizer",
+  "private": true,
+  "version": "1.0.0",
+  "type": "module",
+  "description": "A PWA that visualizes the audio spectrum of sound playing on your machine.",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview"
+  },
+  "devDependencies": {
+    "vite": "^5.4.0",
+    "vite-plugin-pwa": "^0.20.5"
+  }
+}

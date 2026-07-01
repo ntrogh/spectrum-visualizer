@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+    <meta name="theme-color" content="#0a0a12" />
+    <link rel="icon" type="image/svg+xml" href="./icons/favicon.svg" />
+    <title>Spectrum Visualizer</title>
+  </head>
+  <body>
+    <canvas id="stage"></canvas>
+
+    <header id="topbar" class="overlay">
+      <h1 class="title">Spectrum</h1>
+      <div class="topbar-right">
+        <span id="bpm-readout" class="bpm" hidden></span>
+        <button id="fullscreen-btn" class="icon-btn" title="Toggle fullscreen (F)" aria-label="Toggle fullscreen">⤢</button>
+      </div>
+    </header>
+
+    <div id="start-screen" class="overlay center">
+      <div class="panel">
+        <h2>Audio Spectrum Visualizer</h2>
+        <p>
+          Visualize a browser tab or your whole screen — when prompted, enable
+          <strong>“Share tab audio”</strong> / <strong>“Share system audio”</strong>.
+          Or react to live sound through your microphone.
+        </p>
+        <div class="source-buttons">
+          <button id="start-btn" class="primary-btn">Share audio</button>
+          <button id="start-mic-btn" class="secondary-btn">Use microphone</button>
+        </div>
+        <p id="start-error" class="error" hidden></p>
+        <p class="hint">Best experienced in Chrome or Edge.</p>
+      </div>
+    </div>
+
+    <footer id="controls" class="overlay" hidden>
+      <div class="control-group">
+        <label for="visualizer-select">Style</label>
+        <select id="visualizer-select"></select>
+      </div>
+      <div class="control-group">
+        <label for="theme-select">Theme</label>
+        <select id="theme-select"></select>
+      </div>
+      <div class="control-group" id="gain-group">
+        <label for="sensitivity">Gain</label>
+        <input id="sensitivity" type="range" min="0.5" max="10" step="0.1" value="1" />
+      </div>
+      <div class="control-group">
+        <label for="smoothing">Smoothing</label>
+        <input id="smoothing" type="range" min="0" max="0.95" step="0.01" value="0.82" />
+      </div>
+      <div class="control-group">
+        <label for="trails">Trails</label>
+        <input id="trails" type="range" min="0" max="1" step="0.05" value="0.65" />
+      </div>
+      <div class="control-group">
+        <label>Options</label>
+        <div class="toggle-row">
+          <button id="autogain-toggle" class="toggle-btn" type="button" title="Auto-gain (A)">Auto-gain</button>
+          <button id="logscale-toggle" class="toggle-btn" type="button" title="Logarithmic frequency (L)">Log freq</button>
+        </div>
+      </div>
+      <button id="stop-btn" class="ghost-btn">Stop</button>
+    </footer>
+
+    <script type="module" src="/src/main.js"></script>
+  </body>
+</html>
